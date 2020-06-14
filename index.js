@@ -48,6 +48,7 @@ function humanizeDuration ( moment_obj, did_leave_company ) {
 function getUrlFromUsername( site, username ) {
     var url_map = {
         github: 'github.com',
+        gitlab: 'gitlab.com',
         twitter: 'twitter.com',
         soundcloud: 'soundcloud.com',
         pinterest: 'pinterest.com',

@@ -129,6 +129,14 @@ body {
   text-align: center;
   width: 2em;
 }
+.fa-gitlab {
+  color: #FC6D27;
+}
+.fa-gitlab:hover,
+.fa-gitlab:focus {
+  text-decoration: none;
+  color:  #FCA326;
+}
 .fa-github {
   color: #454545;
 }
