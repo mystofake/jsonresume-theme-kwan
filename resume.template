@@ -92,12 +92,6 @@
       <section class="row">
         <div class="card-wrapper">
           <div class="card background-card">
-
-            <h4 id="about"> <span class="fa fa-lg fa-user"></span> <span class="title">About</span> </h4>
-            <div class="card-nested" itemprop="description">
-              <p> {{resume.basics.summary}} </p>
-            </div>
-
             <h4 id="work-experience"> <span class="fa fa-lg fa-pencil-square-o"></span> <span class="title">Work Experience</span> </h4>
             <ul class="list-unstyled">
               {{#each resume.work}}
@@ -131,8 +125,10 @@
             <ul class="list-unstyled">
               {{#each resume.skills}}
                 <li class="card-nested skill {{skill_class}}">
-                  <strong>{{name}} ({{skill_class}}):</strong>
-                  {{#keywords}} <span class="enumeration">{{.}}</span> {{/keywords}}
+                  <strong>{{name}}</strong>
+              </li>
+              <li class="card-nested skill {{skill_class}}">
+                  {{#keywords}} <span class="label label-keyword">{{.}}</span> {{/keywords}}
               </li>
               {{/each}}
             </ul>
@@ -144,7 +140,7 @@
                 <li class="card-nested">
                   <div class="content has-sidebar">
                     <p class="clear-margin-sm">
-                      <strong>{{area}}, {{studyType}}</strong>,&nbsp;
+                      <strong>{{area}}</strong>,&nbsp;
                       {{institution}}
                     </p>
                     <p class="text-muted">
@@ -154,7 +150,14 @@
                     </p>
                     <i>{{gpa}}</i>
                     <div class="space-top labels">
-                      {{#courses}} <span class="label label-keyword">{{.}}</span> {{/courses}}
+                      <p>{{summary}}</p>
+                      {{#if highlights}}
+                        <ul>
+                          {{#each highlights}}
+                            <li> {{.}} </li>
+                          {{/each}}
+                        </ul>
+                      {{/if}}
                     </div>
                   </div>
                 </li>
@@ -231,6 +234,17 @@
             </ul>
             {{/if}}
 
+            {{#if resume.languages}}
+            <h4 id="languages"><span class="fa fa-lg fa-language"></span> <span class="title">Languages</span> </h4>
+            <p class="card-nested">
+              {{#each resume.languages}}
+                <span class="enumeration">
+                  <strong>{{language}}</strong> ({{fluency}})
+                </span>
+              {{/each}}
+            </ul>
+            {{/if}}
+
             {{#if resume.interests}}
             <h4 id="interests"> <span class="fa fa-lg fa-heart"></span> <span class="title">Interests</span> </h4>
             <ul class="list-unstyled">
@@ -262,17 +276,6 @@
                     <p class="clear-margin">{{reference}}</p>
                   </blockquote>
                 </li>
-              {{/each}}
-            </ul>
-            {{/if}}
-
-            {{#if resume.languages}}
-            <h4 id="languages"><span class="fa fa-lg fa-language"></span> <span class="title">Languages</span> </h4>
-            <p class="card-nested">
-              {{#each resume.languages}}
-                <span class="enumeration">
-                  <strong>{{language}}</strong> ({{fluency}})
-                </span>
               {{/each}}
             </ul>
             {{/if}}
