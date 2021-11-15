@@ -93,14 +93,13 @@ body {
   padding: 1rem 4rem 0 0 ;
 }
 .profile-pic img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 .contact-details {
   display: table-cell;
 }
 .contact-details .detail {
-  display: inline-block;
   line-height: 2;
   margin-right: 2rem;
 }
